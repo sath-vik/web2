@@ -413,6 +413,7 @@ img {
 /* ===== CONTACT =====*/
 .contact__input {
   width: 100%;
+  font-family: 'Poppins', sans-serif;
   font-size: var(--normal-font-size);
   font-weight: var(--font-semi);
   padding: 1rem;
