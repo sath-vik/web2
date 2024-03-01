@@ -65,6 +65,7 @@ function validateAndSend() {
     const email = document.getElementById("email").value;
     const message = document.getElementById("message").value;
     const contactResponse = document.getElementById("contact-response");
+    const SubmitButton = document.querySelector('.contact__button');
     // Check if email is valid
     if (!isValidEmail(email)) {
         contactResponse.style.display = 'inline';
@@ -78,7 +79,7 @@ function validateAndSend() {
 
     // Check if all fields are filled
     if (name && email && message) {
-        document.querySelector('.contact__button').innerHTML = `Submitting...`;
+        SubmitButton.innerHTML = `Submitting...`;
         emailjs.send("service_ky2agvt", "template_qnfllcl", {
             to_name: "Recipient Name",  // Replace with the recipient's name
             from_name: name,
@@ -101,7 +102,7 @@ function validateAndSend() {
                 document.getElementById("contact-form").reset();
             },
             function (error) {
-                document.querySelector('.contact__button').innerHTML = `Submit`;
+                SubmitButton.innerHTML = `Submit`;
                 console.log("Email sending failed:", error);
                 // Show error message or perform other actions
                 // Show error message
